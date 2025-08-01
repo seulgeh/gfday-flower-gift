@@ -59,7 +59,7 @@ export default function App() {
             className="text-3xl text-[#5d4037] font-bold"
           >
             not my girlfriend (yet), but definitely the girl i’ve been smiling about. 
-            Happy GF Day! 🌸
+            Happy GF Day! 🌸🌸🌸🌸🌸
           </motion.h1>
           <motion.button
             onClick={() => setPage(2)}
@@ -97,7 +97,7 @@ export default function App() {
               but rasanya sayang aja kalau hari ini lewat gitu aja tanpa bilang something nice to someone i genuinely care about. <br /><br />
             </motion.p>
             <motion.p whileHover={{ scale: 1.02 }} variants={textVariants}>
-              im not saying this to rush things or make it weird, but just being real with you:
+              im not saying this to rush things or make it weird, but just being real with you.
               i really enjoy every convo, every random moment, and just getting to know you more. 
               Kayak tiap kali ngobrol sama kamu, even the simplest convos bisa bikin mood aku naik. 
               kamu tuh punya vibe yang calm but interesting, warm but still mysterious in a way. 

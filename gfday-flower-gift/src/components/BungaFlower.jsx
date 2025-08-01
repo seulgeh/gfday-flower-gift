@@ -10,12 +10,24 @@ const BungaFlower = ({ setPage }) => {
     const timer = setTimeout(() => {
       setSweetMessage(
         <>
-          <p className="text-sm sm:text-base text-pink-500 font-bold mb-2 animate-pulse">
-            as always, i’ll never get tired of saying this, u’re genuinely sooo cute and pretty.
-          </p>
-          <p className="text-xs sm:text-sm text-gray-700 mb-4">
-            really glad i got to know you, keiii
-          </p>
+          <div className="flex flex-col sm:flex-row items-end sm:items-center justify-end space-y-2 sm:space-y-0 sm:space-x-4">
+            <div className="text-right">
+              <p className="text-sm sm:text-base text-pink-500 font-bold animate-pulse">
+                as always, i’ll never get tired of saying this, u’re genuinely sooo cute and pretty.
+              </p>
+              <p className="text-xs sm:text-sm text-gray-700">
+                really glad i got to know you, keiii
+              </p>
+            </div>
+            <motion.button
+              onClick={() => setPage(1)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-4 sm:mt-0 bg-pink-500 text-white px-6 py-3 rounded-full"
+            >
+              Back to Home 🏠
+            </motion.button>
+          </div>
         </>
       );
     }, 10000);

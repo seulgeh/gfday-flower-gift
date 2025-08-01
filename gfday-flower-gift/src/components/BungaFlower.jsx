@@ -305,5 +305,7 @@ const BungaFlower = () => {
     
     <script src="BungaFlower.js"></script>
   </div>
-  )
+  );
 }
+
+export default BungaFlower;

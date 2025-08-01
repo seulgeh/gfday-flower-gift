@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./BungaFlower.css";
 
-const BungaFlower = () => {
+const BungaFlower = ({ setPage }) => {
+  const [sweetMessage, setSweetMessage] = useState("");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSweetMessage(
+        <>
+          <p className="text-xl text-pink-500 font-bold mb-2 animate-pulse">
+            Kamu lucuu dan cantik banget! 🥰
+          </p>
+          <p className="text-lg text-gray-700 mb-4">
+            Beruntung banget aku bisa kenal kamu. 😊 Luvky to me! ✨
+          </p>
+        </>
+      );
+    }, 5000); // Menampilkan pesan setelah 5 detik (sesuaikan jika perlu)
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="container">
+    <div className="container relative">
       <div className="night"></div>
 
-      {/* Tambahan untuk kunang-kunang */}
       <div className="fireflies">
         <div className="firefly firefly--1"></div>
         <div className="firefly firefly--2"></div>
@@ -17,6 +34,7 @@ const BungaFlower = () => {
 
       <div className="flowers">
         <div className="flower flower--1">
+          {/* ... (struktur flower 1) ... */}
           <div className="flower__leafs flower__leafs--1">
             <div className="flower__leaf flower__leaf--1"></div>
             <div className="flower__leaf flower__leaf--2"></div>
@@ -42,6 +60,7 @@ const BungaFlower = () => {
           </div>
         </div>
         <div className="flower flower--2">
+          {/* ... (struktur flower 2) ... */}
           <div className="flower__leafs flower__leafs--2">
             <div className="flower__leaf flower__leaf--1"></div>
             <div className="flower__leaf flower__leaf--2"></div>
@@ -65,6 +84,7 @@ const BungaFlower = () => {
           </div>
         </div>
         <div className="flower flower--3">
+          {/* ... (struktur flower 3) ... */}
           <div className="flower__leafs flower__leafs--3">
             <div className="flower__leaf flower__leaf--1"></div>
             <div className="flower__leaf flower__leaf--2"></div>
@@ -288,6 +308,20 @@ const BungaFlower = () => {
             <div className="leaf leaf--3"></div>
           </div>
         </div>
+      </div>
+
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+        {sweetMessage}
+        {sweetMessage && (
+          <motion.button
+            onClick={() => setPage(1)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-4 bg-[#8d6e63] text-white px-6 py-3 rounded-full"
+          >
+            Back to Home 🏠
+          </motion.button>
+        )}
       </div>
     </div>
   );

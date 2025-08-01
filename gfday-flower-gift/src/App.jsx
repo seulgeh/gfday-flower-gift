@@ -52,11 +52,12 @@ export default function App() {
             You’ve got this energy that’s lowkey hard to ignore. So yeah, not saying you’re my girl (yet 👀), but if I had to pick someone to celebrate today with, it’d probably be you.
           </p>
 
+          {/* Bouquet GIF di halaman 2 */}
           <motion.div
             className="mt-8 w-full flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 10 }}
+            transition={{ duration: 1.5 }}
           >
             <img
               src="https://media.tenor.com/JqXYk5QYFzYAAAAi/flowers-bouquet.gif"
@@ -77,10 +78,26 @@ export default function App() {
           <h2 className="text-2xl font-bold text-[#4e342e] mb-4">💖 You’re special to me 💖</h2>
           <p className="text-[#3e2723] text-lg mb-6">
             Thank you for reading my message.<br />
-            I hope this little gesture made your day a little brighter 🌞
+            I hope this little gesture made your day a little brighter 🌞<br />
+            I’ll be waiting for your answer... 💌
           </p>
+
+          {/* Bouquet GIF di halaman 3 */}
           <motion.div
-            className="text-5xl mb-6"
+            className="mt-4 w-full flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
+          >
+            <img
+              src="https://media.tenor.com/JqXYk5QYFzYAAAAi/flowers-bouquet.gif"
+              alt="Bouquet animation"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-xl shadow"
+            />
+          </motion.div>
+
+          <motion.div
+            className="text-5xl my-6"
             animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -95,5 +112,8 @@ export default function App() {
         </motion.div>
       )}
     </div>
+  );
+}
+
   );
 }

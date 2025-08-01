@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./BungaFlower.css";
+import { motion } from 'framer-motion';
 
 const BungaFlower = ({ setPage }) => {
   const [sweetMessage, setSweetMessage] = useState("");
 
   useEffect(() => {
+    // KOREKSI: Mengubah waktu menjadi 10 detik agar bunga punya waktu mekar
     const timer = setTimeout(() => {
       setSweetMessage(
         <>
@@ -12,16 +14,16 @@ const BungaFlower = ({ setPage }) => {
             Kamu lucuu dan cantik banget! 🥰
           </p>
           <p className="text-lg text-gray-700 mb-4">
-            Beruntung banget aku bisa kenal kamu. 😊 Luvky to me! ✨
+            Beruntung banget aku bisa kenal kamu. 😊 Lucky to me! ✨
           </p>
         </>
       );
-    }, 5000); // Menampilkan pesan setelah 5 detik (sesuaikan jika perlu)
+    }, 10000); 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="container relative">
+    <div className="container relative min-h-screen">
       <div className="night"></div>
 
       <div className="fireflies">
@@ -311,16 +313,23 @@ const BungaFlower = ({ setPage }) => {
       </div>
 
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        {sweetMessage}
         {sweetMessage && (
-          <motion.button
-            onClick={() => setPage(1)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-4 bg-[#8d6e63] text-white px-6 py-3 rounded-full"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center bg-white/30 backdrop-blur-md p-4 rounded-xl shadow-lg"
           >
-            Back to Home 🏠
-          </motion.button>
+            {sweetMessage}
+            <motion.button
+              onClick={() => setPage(1)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-4 bg-pink-500 text-white px-6 py-3 rounded-full"
+            >
+              Back to Home 🏠
+            </motion.button>
+          </motion.div>
         )}
       </div>
     </div>

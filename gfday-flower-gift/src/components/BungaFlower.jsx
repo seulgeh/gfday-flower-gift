@@ -6,18 +6,19 @@ const BungaFlower = ({ setPage }) => {
   const [sweetMessage, setSweetMessage] = useState("");
 
   useEffect(() => {
+    // KOREKSI: Mengubah waktu menjadi 10 detik agar bunga punya waktu mekar
     const timer = setTimeout(() => {
       setSweetMessage(
         <>
-          <p className="text-xl text-pink-500 font-bold mb-2 animate-pulse">
+          <p className="text-sm sm:text-base text-pink-500 font-bold mb-2 animate-pulse">
             as always, i’ll never get tired of saying this, u’re genuinely sooo cute and pretty.
           </p>
-          <p className="text-lg text-gray-700 mb-4">
+          <p className="text-xs sm:text-sm text-gray-700 mb-4">
             really glad i got to know you, keiii
           </p>
         </>
       );
-    }, 10000); 
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -35,7 +36,6 @@ const BungaFlower = ({ setPage }) => {
 
       <div className="flowers">
         <div className="flower flower--1">
-          {/* ... (struktur flower 1) ... */}
           <div className="flower__leafs flower__leafs--1">
             <div className="flower__leaf flower__leaf--1"></div>
             <div className="flower__leaf flower__leaf--2"></div>
@@ -61,7 +61,6 @@ const BungaFlower = ({ setPage }) => {
           </div>
         </div>
         <div className="flower flower--2">
-          {/* ... (struktur flower 2) ... */}
           <div className="flower__leafs flower__leafs--2">
             <div className="flower__leaf flower__leaf--1"></div>
             <div className="flower__leaf flower__leaf--2"></div>
@@ -85,7 +84,6 @@ const BungaFlower = ({ setPage }) => {
           </div>
         </div>
         <div className="flower flower--3">
-          {/* ... (struktur flower 3) ... */}
           <div className="flower__leafs flower__leafs--3">
             <div className="flower__leaf flower__leaf--1"></div>
             <div className="flower__leaf flower__leaf--2"></div>
@@ -311,29 +309,28 @@ const BungaFlower = ({ setPage }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        {sweetMessage && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center bg-white/30 backdrop-blur-md p-4 rounded-xl shadow-lg"
-          >
-            {sweetMessage}
-            <motion.button
-              onClick={() => setPage(1)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-4 bg-pink-500 text-white px-6 py-3 rounded-full"
-            >
-              Back to Home 🏠
-            </motion.button>
-          </motion.div>
-        )}
-      </div>
-    </div>
-  );
+      <div className="absolute bottom-4 right-4 flex flex-col items-end text-right p-4">
+        {sweetMessage && (
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white/30 backdrop-blur-md p-4 rounded-xl shadow-lg w-full max-w-sm"
+          >
+            {sweetMessage}
+            <motion.button
+              onClick={() => setPage(1)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-4 bg-pink-500 text-white px-6 py-3 rounded-full"
+            >
+              Back to Home 🏠
+            </motion.button>
+          </motion.div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default BungaFlower;
-berikan code nya

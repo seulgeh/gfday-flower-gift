@@ -10,6 +10,14 @@ export default function App() {
       const timer = setTimeout(() => setPage(3), 3000);
       return () => clearTimeout(timer);
     }
+
+    if (page === 3) {
+      const redirectTimer = setTimeout(() => {
+        window.location.href = '/bunga-flower/';
+      }, 5000); // ⏱️ 5 detik sebelum redirect
+
+      return () => clearTimeout(redirectTimer);
+    }
   }, [page]);
 
   return (
@@ -56,7 +64,6 @@ export default function App() {
 
       {page === 3 && (
         <div className="relative w-full h-screen bg-black flex items-center justify-center overflow-hidden">
-          {/* Glitter particle background */}
           {[...Array(25)].map((_, i) => (
             <motion.div
               key={i}
@@ -81,14 +88,13 @@ export default function App() {
             />
           ))}
 
-          {/* Bouquet from code */}
+          {/* Bouquet */}
           <motion.div
             className="relative w-64 h-96 z-10"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 1.5 }}
           >
-            {/* Batang */}
             <motion.div
               className="absolute bottom-0 left-1/2 w-2 h-64 bg-green-700 -translate-x-1/2 rounded-full"
               initial={{ height: 0 }}
@@ -96,7 +102,6 @@ export default function App() {
               transition={{ duration: 1.5, delay: 0.5 }}
             />
 
-            {/* Kelopak mekar */}
             {[...Array(6)].map((_, i) => (
               <motion.div
                 key={i}
@@ -120,7 +125,6 @@ export default function App() {
               />
             ))}
 
-            {/* Tengah bunga */}
             <motion.div
               className="absolute top-1/2 left-1/2 w-12 h-12 bg-yellow-400 rounded-full -translate-x-1/2 -translate-y-1/2"
               initial={{ scale: 0 }}

@@ -3,7 +3,7 @@ import "./BungaFlower.css";
 import { motion } from 'framer-motion';
 
 const BungaFlower = ({ setPage }) => {
-  const [sweetMessage, setSweetMessage] = useState("");
+  const [sweetMessage, setSweetMessage] = useState(null);
 
   useEffect(() => {
     // KOREKSI: Mengubah waktu menjadi 10 detik agar bunga punya waktu mekar
@@ -19,14 +19,6 @@ const BungaFlower = ({ setPage }) => {
                 really glad i got to know you, keiii
               </p>
             </div>
-            <motion.button
-              onClick={() => setPage(1)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-4 sm:mt-0 bg-pink-500 text-white px-6 py-3 rounded-full"
-            >
-              Back to Home 🏠
-            </motion.button>
           </div>
         </>
       );
@@ -321,13 +313,14 @@ const BungaFlower = ({ setPage }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-4 flex flex-col items-end text-right p-4">
+      {/* Perubahan utama ada di sini */}
+      <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-xs">
         {sweetMessage && (
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white/30 backdrop-blur-md p-4 rounded-xl shadow-lg w-full max-w-sm"
+            className="bg-white/30 backdrop-blur-md p-3 rounded-xl shadow-lg flex flex-col items-end text-right"
           >
             {sweetMessage}
             <motion.button

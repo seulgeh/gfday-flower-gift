@@ -1,0 +1,125 @@
+.flower-container {
+  background: linear-gradient(to top, #87ceeb, #fff);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #fffacd, #ffd700);
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.flower {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stem {
+  width: 10px;
+  height: 200px;
+  background: green;
+  border-radius: 5px;
+  animation: grow 2s ease-out;
+}
+
+@keyframes grow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 200px;
+  }
+}
+
+.petals {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: -60px;
+}
+
+.petal {
+  position: absolute;
+  width: 40px;
+  height: 80px;
+  background: pink;
+  border-radius: 50% 50% 0 0;
+  transform-origin: bottom center;
+  animation: bloom 1s ease-in-out forwards;
+}
+
+.petal-0 { transform: rotate(0deg) translateY(-40px); }
+.petal-1 { transform: rotate(60deg) translateY(-40px); }
+.petal-2 { transform: rotate(120deg) translateY(-40px); }
+.petal-3 { transform: rotate(180deg) translateY(-40px); }
+.petal-4 { transform: rotate(240deg) translateY(-40px); }
+.petal-5 { transform: rotate(300deg) translateY(-40px); }
+
+@keyframes bloom {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.center {
+  width: 40px;
+  height: 40px;
+  background: yellow;
+  border-radius: 50%;
+  margin-top: -20px;
+  z-index: 1;
+  animation: pop 1s ease-out forwards;
+}
+
+@keyframes pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+.leaf {
+  width: 60px;
+  height: 30px;
+  background: green;
+  position: absolute;
+  border-radius: 50%;
+  top: 120px;
+  animation: leaf-float 2s infinite ease-in-out alternate;
+}
+
+.leaf-left {
+  left: -40px;
+  transform: rotate(-30deg);
+}
+
+.leaf-right {
+  right: -40px;
+  transform: rotate(30deg);
+}
+
+@keyframes leaf-float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}

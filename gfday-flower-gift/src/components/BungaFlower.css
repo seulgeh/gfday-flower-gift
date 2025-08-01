@@ -12,7 +12,7 @@
 
 body {
   display: flex;
-  align-items: flex-end;
+  align-items: center; /* KOREKSI: Posisikan konten di tengah secara vertikal */
   justify-content: center;
   min-height: 100vh;
   background-color: var(--dark-color);
@@ -32,15 +32,17 @@ body {
 }
 
 .flowers {
-  position: relative;
-  transform: scale(0.9);
+  position: absolute; /* KOREKSI: Mengubah posisi untuk penempatan di tengah */
+  top: 50%; /* KOREKSI: Posisikan 50% dari atas */
+  left: 50%; /* KOREKSI: Posisikan 50% dari kiri */
+  transform: translate(-50%, -50%) scale(0.8); /* KOREKSI: Posisikan di tengah secara total & perkecil */
+  z-index: 10;
 }
 
 .flower {
   position: absolute;
-  bottom: 5vmin;
+  /* KOREKSI: Hapus `bottom` karena sudah diatur di `.flowers` */
   transform-origin: bottom center;
-  z-index: 10;
   --fl-speed: 0.3s;
 }
 .flower--1 {

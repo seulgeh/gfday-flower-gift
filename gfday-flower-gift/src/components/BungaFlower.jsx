@@ -11,10 +11,10 @@ const BungaFlower = ({ setPage }) => {
       setSweetMessage(
         <>
           <p className="text-xl text-pink-500 font-bold mb-2 animate-pulse">
-            Kamu lucuu dan cantik banget! 🥰
+            as always, i’ll never get tired of saying this, u’re genuinely sooo cute and pretty.
           </p>
           <p className="text-lg text-gray-700 mb-4">
-            Beruntung banget aku bisa kenal kamu. 😊 Lucky to me! ✨
+            really glad i got to know you, keiii
           </p>
         </>
       );

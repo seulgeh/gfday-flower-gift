@@ -6,13 +6,8 @@ import BungaFlower from './components/BungaFlower';
 export default function App() {
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    if (page === 2) {
-      // KOREKSI: Mengubah durasi menjadi 15000ms (15 detik)
-      const timer = setTimeout(() => setPage(3), 15000); 
-      return () => clearTimeout(timer);
-    }
-  }, [page]);
+  // MENGHAPUS useEffect UNTUK AUTO-NEXT PADA HALAMAN KEDUA
+  // Jika pengguna ingin next ke halaman ketiga, mereka akan menekan tombol "Next".
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -114,6 +109,15 @@ export default function App() {
               once again, happy GF day to uuu pwettyyy💗
             </motion.p>
           </motion.div>
+          {/* KOREKSI: Tombol Next ditambahkan */}
+          <motion.button
+            onClick={() => setPage(3)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="mt-6 bg-[#8d6e63] text-white px-6 py-3 rounded-full"
+          >
+            Next ➡️
+          </motion.button>
         </motion.div>
       )}
 

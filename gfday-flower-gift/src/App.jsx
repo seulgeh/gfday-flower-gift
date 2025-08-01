@@ -52,7 +52,6 @@ export default function App() {
             You’ve got this energy that’s lowkey hard to ignore. So yeah, not saying you’re my girl (yet 👀), but if I had to pick someone to celebrate today with, it’d probably be you.
           </p>
 
-          {/* Bouquet GIF di halaman 2 */}
           <motion.div
             className="mt-8 w-full flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -82,7 +81,6 @@ export default function App() {
             I’ll be waiting for your answer... 💌
           </p>
 
-          {/* Bouquet GIF di halaman 3 */}
           <motion.div
             className="mt-4 w-full flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -103,6 +101,7 @@ export default function App() {
           >
             💖 💗 💞 💕 💓
           </motion.div>
+
           <button
             onClick={() => setPage(1)}
             className="bg-[#8d6e63] text-white px-6 py-2 rounded-full shadow hover:bg-[#5d4037] transition"
@@ -112,8 +111,5 @@ export default function App() {
         </motion.div>
       )}
     </div>
-  );
-}
-
   );
 }

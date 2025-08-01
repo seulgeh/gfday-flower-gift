@@ -1,83 +1,89 @@
 import React, { useEffect } from 'react';
-import './main.css';
+import '/bunga-flower/main.css'; // pastikan ini bisa diakses dari public/
 
 const BungaFlower = () => {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = '/bunga-flower/main.js';
+    script.src = '/bunga-flower/main.js'; // jalankan JS animasi
     script.type = 'module';
     document.body.appendChild(script);
+
     return () => {
-      document.body.removeChild(script);
+      document.body.removeChild(script); // bersihkan saat unmount
     };
   }, []);
 
   return (
-    <>
-      <div className="container">
-        <div className="night"></div>
-        <div className="flowers">
-          {/* Flower 1 */}
-          <div className="flower flower--1">
-            <div className="flower__leafs flower__leafs--1">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className={`flower__leaf flower__leaf--${i}`}></div>
-              ))}
-              <div className="flower__white-circle"></div>
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className={`flower__light flower__light--${i + 1}`}></div>
-              ))}
-            </div>
-            <div className="flower__line">
-              {[1, 2, 3, 4, 5, 6].map(i => (
-                <div key={i} className={`flower__line__leaf flower__line__leaf--${i}`}></div>
-              ))}
-            </div>
-          </div>
+    <div className="container">
+      <div className="night"></div>
 
-          {/* Flower 2 */}
-          <div className="flower flower--2">
-            <div className="flower__leafs flower__leafs--2">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className={`flower__leaf flower__leaf--${i}`}></div>
-              ))}
-              <div className="flower__white-circle"></div>
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className={`flower__light flower__light--${i + 1}`}></div>
-              ))}
-            </div>
-            <div className="flower__line">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className={`flower__line__leaf flower__line__leaf--${i}`}></div>
-              ))}
-            </div>
-          </div>
-
-          {/* Flower 3 */}
-          <div className="flower flower--3">
-            <div className="flower__leafs flower__leafs--3">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className={`flower__leaf flower__leaf--${i}`}></div>
-              ))}
-              <div className="flower__white-circle"></div>
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className={`flower__light flower__light--${i + 1}`}></div>
-              ))}
-            </div>
-            <div className="flower__line">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className={`flower__line__leaf flower__line__leaf--${i}`}></div>
-              ))}
-            </div>
-          </div>
-
-          {/* Tambahkan bagian bunga dan daun lainnya secara langsung sesuai kebutuhan */}
+      <div className="flowers">
+        <div className="flower flower--1">
+          <div className="flower__leaf flower__leaf--1"></div>
+          <div className="flower__leaf flower__leaf--2"></div>
+          <div className="flower__leaf flower__leaf--3"></div>
+          <div className="flower__leaf flower__leaf--4"></div>
+          <div className="flower__white-circle"></div>
+          <div className="flower__light flower__light--1"></div>
+          <div className="flower__light flower__light--2"></div>
+          <div className="flower__light flower__light--3"></div>
+          <div className="flower__light flower__light--4"></div>
+          <div className="flower__light flower__light--5"></div>
+          <div className="flower__light flower__light--6"></div>
+          <div className="flower__light flower__light--7"></div>
+          <div className="flower__light flower__light--8"></div>
         </div>
-        <canvas id="canvas"></canvas>
+
+        <div className="flower flower--2">
+          <div className="flower__leaf flower__leaf--1"></div>
+          <div className="flower__leaf flower__leaf--2"></div>
+          <div className="flower__leaf flower__leaf--3"></div>
+          <div className="flower__leaf flower__leaf--4"></div>
+          <div className="flower__white-circle"></div>
+          <div className="flower__light flower__light--1"></div>
+          <div className="flower__light flower__light--2"></div>
+          <div className="flower__light flower__light--3"></div>
+          <div className="flower__light flower__light--4"></div>
+          <div className="flower__light flower__light--5"></div>
+          <div className="flower__light flower__light--6"></div>
+          <div className="flower__light flower__light--7"></div>
+          <div className="flower__light flower__light--8"></div>
+        </div>
+
+        <div className="flower flower--3">
+          <div className="flower__leaf flower__leaf--1"></div>
+          <div className="flower__leaf flower__leaf--2"></div>
+          <div className="flower__leaf flower__leaf--3"></div>
+          <div className="flower__leaf flower__leaf--4"></div>
+          <div className="flower__white-circle"></div>
+          <div className="flower__light flower__light--1"></div>
+          <div className="flower__light flower__light--2"></div>
+          <div className="flower__light flower__light--3"></div>
+          <div className="flower__light flower__light--4"></div>
+          <div className="flower__light flower__light--5"></div>
+          <div className="flower__light flower__light--6"></div>
+          <div className="flower__light flower__light--7"></div>
+          <div className="flower__light flower__light--8"></div>
+        </div>
+
+        <div className="grow-ans">
+          <div className="growing-grass">
+            <div className="grass"></div>
+            <div className="grass"></div>
+            <div className="grass"></div>
+            <div className="grass"></div>
+            <div className="grass"></div>
+            <div className="grass"></div>
+            <div className="grass"></div>
+            <div className="grass"></div>
+            <div className="grass"></div>
+          </div>
+        </div>
       </div>
-    </>
+
+      <canvas id="canvas"></canvas>
+    </div>
   );
 };
 
 export default BungaFlower;
-

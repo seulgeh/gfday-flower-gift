@@ -58,6 +58,7 @@ export default function App() {
             whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0] }}
             className="text-3xl text-[#5d4037] font-bold"
           >
+            not my girlfriend (yet), but definitely the girl i’ve been smiling about. 
             Happy GF Day! 🌸
           </motion.h1>
           <motion.button
@@ -66,7 +67,7 @@ export default function App() {
             whileTap={{ scale: 0.95 }}
             className="mt-6 bg-[#8d6e63] text-white px-6 py-3 rounded-full"
           >
-            Tap to open your message 🌹
+            tap to open your message, pretty 🌹
           </motion.button>
         </motion.div>
       )}
@@ -92,16 +93,24 @@ export default function App() {
             className="text-[#3e2723] text-lg leading-relaxed"
           >
             <motion.p whileHover={{ scale: 1.02 }} variants={textVariants}>
-              Happy GF Day, Kei. I know we’re not officially anything right now, but honestly,
-              you’ve been on my mind a lot lately — especially today. <br /><br />
+              honestly, i don’t even know if im allowed to say this, like.. kita belum jadian and i get it. 
+              but rasanya sayang aja kalau hari ini lewat gitu aja tanpa bilang something nice to someone i genuinely care about. <br /><br />
             </motion.p>
             <motion.p whileHover={{ scale: 1.02 }} variants={textVariants}>
-              I’m not saying this to rush things or make it weird, but just being real with you:
-              I really enjoy every convo, every random moment, and just getting to know you more. <br /><br />
+              im not saying this to rush things or make it weird, but just being real with you:
+              i really enjoy every convo, every random moment, and just getting to know you more. 
+              Kayak tiap kali ngobrol sama kamu, even the simplest convos bisa bikin mood aku naik. 
+              kamu tuh punya vibe yang calm but interesting, warm but still mysterious in a way. 
+              gimana ya… susah dijelasin tapi gampang dirasain.<br /><br />
             </motion.p>
             <motion.p whileHover={{ scale: 1.02 }} variants={textVariants}>
-              You’ve got this energy that’s lowkey hard to ignore. So yeah, not saying you’re my girl (yet 👀),
-              but if I had to pick someone to celebrate today with, it’d probably be you.
+              you make things feel light, and i appreciate how you just show up as urself, 
+              tanpa berusaha jadi orang lain. that's rare gurll.
+              u’ve got this energy that’s lowkey hard to ignore. sooo, this message isn’t me trying to pressure anything. 
+              just wanted to let you know, u’re genuinely someone i admire and enjoy having around. 
+              maybe not ‘my girl’ yet, but definitely someone who’s been making my days a little brighter lately.
+              Kalau kamu senyum pas baca ini, that’s already more than enough for me😁
+              once again, happy GF day to uuu pwettyyy💗
             </motion.p>
           </motion.div>
         </motion.div>

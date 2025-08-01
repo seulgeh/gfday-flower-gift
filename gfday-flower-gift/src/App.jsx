@@ -70,13 +70,14 @@ export default function App() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          // KOREKSI: Padding dan ukuran font diatur ulang agar lebih responsif
-          className="bg-[#d7ccc8] p-4 sm:p-8 py-4 sm:py-8 rounded-2xl shadow-xl w-full max-w-xl text-center"
+          // KOREKSI: Tambahkan flex-col dan justify-between
+          className="bg-[#d7ccc8] p-4 sm:p-8 py-4 sm:py-8 rounded-2xl shadow-xl w-full max-w-xl text-center flex flex-col justify-between"
         >
           <motion.h2
             whileHover={{ scale: 1.05, color: '#f06292' }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="text-2xl font-semibold text-[#4e342e] mb-4"
+            // KOREKSI: Sesuaikan ukuran font heading
+            className="text-xl sm:text-2xl font-semibold text-[#4e342e] mb-4"
           >
             💐 A Message for You 💐
           </motion.h2>
@@ -84,8 +85,8 @@ export default function App() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            // KOREKSI: Gunakan font terkecil di layar HP
-            className="text-[#3e2723] text-xs sm:text-sm md:text-base leading-relaxed"
+            // KOREKSI: Gunakan font terkecil di layar HP, dan leading yang lebih rapat
+            className="text-[#3e2723] text-[10px] sm:text-xs md:text-base leading-tight md:leading-relaxed"
           >
             <motion.p whileHover={{ scale: 1.02 }} variants={textVariants}>
               honestly, i don’t even know if im allowed to say this, like.. kita belum jadian and i get it. 
@@ -112,7 +113,8 @@ export default function App() {
             onClick={() => setPage(3)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-4 bg-[#8d6e63] text-white px-4 py-2 rounded-full"
+            // KOREKSI: Ganti mt-6 menjadi mt-4 agar lebih ringkas
+            className="mt-4 bg-[#8d6e63] text-white px-4 py-2 rounded-full text-xs sm:text-sm"
           >
             Next ➡️
           </motion.button>

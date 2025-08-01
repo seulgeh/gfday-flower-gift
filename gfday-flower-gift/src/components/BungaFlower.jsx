@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./BungaFlower.css";
 import { motion } from 'framer-motion';
+import { Home } from 'lucide-react'; // KOREKSI: Tambahkan impor ikon Home
 
 const BungaFlower = ({ setPage }) => {
-  const [showContent, setShowContent] = useState(false);
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    // Menampilkan pesan dan tombol setelah 10 detik
+    // Menampilkan tombol setelah 10 detik
     const timer = setTimeout(() => {
-      setShowContent(true);
+      setShowButton(true);
     }, 10000);
     return () => clearTimeout(timer);
   }, []);
@@ -300,7 +301,7 @@ const BungaFlower = ({ setPage }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-sm">
+      <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-xs">
         {showContent && (
           <motion.div
             initial={{ opacity: 0, x: 50 }}

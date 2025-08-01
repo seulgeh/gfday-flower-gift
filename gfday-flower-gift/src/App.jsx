@@ -7,7 +7,7 @@ export default function App() {
   const [page, setPage] = useState(1);
 
   // MENGHAPUS useEffect UNTUK AUTO-NEXT PADA HALAMAN KEDUA
-  // Jika pengguna ingin next ke halaman ketiga, mereka akan menekan tombol "Next".
+  // Kini, perpindahan ke halaman ketiga diatur oleh tombol "Next".
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -109,7 +109,6 @@ export default function App() {
               once again, happy GF day to uuu pwettyyy💗
             </motion.p>
           </motion.div>
-          {/* KOREKSI: Tombol Next ditambahkan */}
           <motion.button
             onClick={() => setPage(3)}
             whileHover={{ scale: 1.05 }}

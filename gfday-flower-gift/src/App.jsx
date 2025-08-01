@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Flower } from 'lucide-react';
 import BungaFlower from './components/BungaFlower';
 
 export default function App() {
   const [page, setPage] = useState(1);
-
-  // MENGHAPUS useEffect UNTUK AUTO-NEXT PADA HALAMAN KEDUA
-  // Kini, perpindahan ke halaman ketiga diatur oleh tombol "Next".
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -73,7 +70,8 @@ export default function App() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="bg-[#d7ccc8] p-4 sm:p-8 rounded-2xl shadow-xl w-full max-w-xl text-center"
+          // KOREKSI: Tambahkan padding vertikal yang lebih besar
+          className="bg-[#d7ccc8] p-4 sm:p-8 py-8 rounded-2xl shadow-xl w-full max-w-xl text-center"
         >
           <motion.h2
             whileHover={{ scale: 1.05, color: '#f06292' }}
@@ -86,8 +84,8 @@ export default function App() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            // KOREKSI: Mengubah ukuran font dasar menjadi `text-sm`
-            className="text-[#3e2723] text-sm sm:text-lg leading-relaxed"
+            // KOREKSI: Gunakan font yang lebih kecil untuk layar kecil
+            className="text-[#3e2723] text-xs sm:text-base md:text-lg leading-relaxed"
           >
             <motion.p whileHover={{ scale: 1.02 }} variants={textVariants}>
               honestly, i don’t even know if im allowed to say this, like.. kita belum jadian and i get it. 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./BungaFlower.css";
 import { motion } from 'framer-motion';
-import { Home } from 'lucide-react'; // KOREKSI: Tambahkan impor ikon Home
 
 const BungaFlower = ({ setPage }) => {
   const [showButton, setShowButton] = useState(false);
@@ -301,31 +300,17 @@ const BungaFlower = ({ setPage }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-xs">
-        {showContent && (
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-white/30 backdrop-blur-md p-3 rounded-xl shadow-lg flex items-center justify-between space-x-2"
+      <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-sm">
+        {showButton && (
+          <motion.button
+            onClick={() => setPage(1)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-pink-500 text-white p-3 rounded-full shadow-lg"
           >
-            <div className="flex flex-col text-right">
-              <p className="text-xs sm:text-sm text-pink-500 font-bold">
-                as always, i’ll never get tired of saying this, u’re genuinely sooo cute and pretty.
-              </p>
-              <p className="text-[10px] sm:text-xs text-gray-700">
-                really glad i got to know you, keiii
-              </p>
-            </div>
-            <motion.button
-              onClick={() => setPage(1)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-0 bg-pink-500 text-white px-4 py-2 rounded-full text-xs sm:text-sm whitespace-nowrap"
-            >
-              Back to Home 🏠
-            </motion.button>
-          </motion.div>
+            {/* Mengganti teks dengan ikon Home */}
+            <Home className="h-6 w-6" />
+          </motion.button>
         )}
       </div>
     </div>

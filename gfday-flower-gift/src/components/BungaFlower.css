@@ -12,7 +12,7 @@
 
 body {
   display: flex;
-  align-items: center; /* KOREKSI: Posisikan konten di tengah secara vertikal */
+  align-items: center;
   justify-content: center;
   min-height: 100vh;
   background-color: var(--dark-color);
@@ -32,20 +32,24 @@ body {
 }
 
 .flowers {
-  position: absolute; /* KOREKSI: Mengubah posisi untuk penempatan di tengah */
-  top: 50%; /* KOREKSI: Posisikan 50% dari atas */
-  left: 50%; /* KOREKSI: Posisikan 50% dari kiri */
-  transform: translate(-50%, -50%) scale(0.8); /* KOREKSI: Posisikan di tengah secara total & perkecil */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* KOREKSI: Sesuaikan transformasi untuk penempatan yang lebih rapi */
+  transform: translate(-50%, -50%) scale(0.8);
   z-index: 10;
 }
 
 .flower {
   position: absolute;
-  /* KOREKSI: Hapus `bottom` karena sudah diatur di `.flowers` */
   transform-origin: bottom center;
   --fl-speed: 0.3s;
 }
+
+/* KOREKSI: Atur posisi horizontal untuk masing-masing bunga */
 .flower--1 {
+  left: 30%;
+  bottom: 0;
   -webkit-animation: moving-flower-1 4s linear infinite;
   animation: moving-flower-1 4s linear infinite;
 }
@@ -80,6 +84,7 @@ body {
 }
 .flower--2 {
   left: 50%;
+  bottom: 0;
   transform: rotate(20deg);
   -webkit-animation: moving-flower-2 4s linear infinite;
   animation: moving-flower-2 4s linear infinite;
@@ -106,7 +111,8 @@ body {
   animation: blooming-leaf-left var(--fl-speed) 1.3s backwards;
 }
 .flower--3 {
-  left: 50%;
+  left: 70%;
+  bottom: 0;
   transform: rotate(-15deg);
   -webkit-animation: moving-flower-3 4s linear infinite;
   animation: moving-flower-3 4s linear infinite;
@@ -319,7 +325,8 @@ body {
   --c: #04661f;
   --line-w: 1.5vmin;
   position: absolute;
-  bottom: 7vmin;
+  /* KOREKSI: Posisikan rumput lebih rendah agar tidak menumpuk */
+  bottom: 0vmin;
   left: -7vmin;
   display: flex;
   flex-direction: column;
@@ -334,7 +341,7 @@ body {
 }
 .flower__grass--2 {
   left: 2vmin;
-  bottom: 5vmin;
+  bottom: 0vmin; /* KOREKSI: Posisikan rumput ini juga lebih rendah */
   transform: scale(0.5) rotate(75deg) rotateX(10deg) rotateY(-200deg);
   opacity: 0.8;
   z-index: 0;
@@ -540,8 +547,9 @@ body {
   --h: 6vmin;
   --c: #0e5b3c;
   position: absolute;
-  bottom: 5vmin;
-  left: -3vmin;
+  /* KOREKSI: Posisikan di bawah bunga 1 */
+  bottom: 0vmin;
+  left: 10vmin;
   transform-origin: bottom center;
   transform: rotate(-30deg) rotateY(-20deg);
   display: flex;
@@ -585,7 +593,8 @@ body {
 }
 .flower__g-right {
   position: absolute;
-  bottom: 1vmin;
+  /* KOREKSI: Posisikan di bawah bunga 2 */
+  bottom: 0vmin;
   left: -2vmin;
   transform-origin: bottom left;
   transform: rotate(20deg);
@@ -647,7 +656,8 @@ body {
 }
 .flower__g-front {
   position: absolute;
-  bottom: 1vmin;
+  /* KOREKSI: Posisikan di bawah bunga 3 */
+  bottom: 0vmin;
   left: 2.5vmin;
   z-index: 100;
   transform-origin: bottom center;
@@ -950,7 +960,8 @@ body {
 
 .long-g {
   position: absolute;
-  bottom: 25vmin;
+  /* KOREKSI: Posisikan lebih rendah */
+  bottom: 10vmin;
   left: -42vmin;
   transform-origin: bottom left;
 }
@@ -968,7 +979,8 @@ body {
   transform: rotate(3deg) rotateY(-180deg);
 }
 .long-g--2, .long-g--3 {
-  bottom: -3vmin;
+  /* KOREKSI: Posisikan di bawah */
+  bottom: -15vmin;
   left: -35vmin;
   transform-origin: center;
   transform: scale(0.6) rotateX(60deg);
@@ -989,7 +1001,8 @@ body {
 }
 .long-g--4 {
   left: 25vmin;
-  bottom: -3vmin;
+  /* KOREKSI: Posisikan di bawah */
+  bottom: -15vmin;
   transform-origin: center;
   transform: scale(0.6) rotateX(60deg);
 }

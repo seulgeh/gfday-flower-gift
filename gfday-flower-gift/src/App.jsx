@@ -52,7 +52,6 @@ export default function App() {
             You’ve got this energy that’s lowkey hard to ignore. So yeah, not saying you’re my girl (yet 👀), but if I had to pick someone to celebrate today with, it’d probably be you.
           </p>
 
-          {/* Bouquet GIF responsif mobile */}
           <motion.div
             className="mt-8 w-full flex justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -78,8 +77,7 @@ export default function App() {
           <h2 className="text-2xl font-bold text-[#4e342e] mb-4">💖 You’re special to me 💖</h2>
           <p className="text-[#3e2723] text-lg mb-6">
             Thank you for reading my message.<br />
-            I hope this little gesture made your day a little brighter 🌞<br />
-            I’ll be waiting for your answer... 💌
+            I hope this little gesture made your day a little brighter 🌞
           </p>
           <motion.div
             className="text-5xl mb-6"
@@ -95,11 +93,6 @@ export default function App() {
             Back to Start ↩️
           </button>
         </motion.div>
-      )}
-    </div>
-  );
-}
-
       )}
     </div>
   );

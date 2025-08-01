@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Flower } from 'lucide-react';
+import BungaFlower from './components/BungaFlower'; // ✅ Import komponen bunga
 
 export default function App() {
   const [page, setPage] = useState(1);
@@ -9,13 +10,6 @@ export default function App() {
     if (page === 2) {
       const timer = setTimeout(() => setPage(3), 3000);
       return () => clearTimeout(timer);
-    }
-
-    if (page === 3) {
-      const redirectTimer = setTimeout(() => {
-        window.location.href = '/bunga-flower/';
-      }, 5000); // Redirect ke /bunga-flower setelah 5 detik
-      return () => clearTimeout(redirectTimer);
     }
   }, [page]);
 
@@ -62,13 +56,7 @@ export default function App() {
       )}
 
       {page === 3 && (
-        <div className="w-full h-screen overflow-hidden bg-black">
-          <iframe
-            src="/bunga-flower/index.html"
-            title="Bunga Flower"
-            className="w-full h-full border-none"
-          />
-        </div>
+        <BungaFlower /> // ✅ Ini render langsung animasi bunga
       )}
     </div>
   );

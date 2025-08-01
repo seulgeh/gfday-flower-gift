@@ -3,12 +3,13 @@ import "./BungaFlower.css";
 import { motion } from 'framer-motion';
 
 const BungaFlower = ({ setPage }) => {
-  const [showButton, setShowButton] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
+    // Menampilkan pesan dan tombol setelah 10 detik
     const timer = setTimeout(() => {
-      setShowButton(true);
-    }, 10000); // Menampilkan tombol setelah 10 detik
+      setShowContent(true);
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -299,19 +300,27 @@ const BungaFlower = ({ setPage }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-xs">
-        {showButton && (
+      <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-sm">
+        {showContent && (
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white/30 backdrop-blur-md p-3 rounded-xl shadow-lg"
+            className="bg-white/30 backdrop-blur-md p-3 rounded-xl shadow-lg flex items-center justify-between space-x-2"
           >
+            <div className="flex flex-col text-right">
+              <p className="text-xs sm:text-sm text-pink-500 font-bold">
+                as always, i’ll never get tired of saying this, u’re genuinely sooo cute and pretty.
+              </p>
+              <p className="text-[10px] sm:text-xs text-gray-700">
+                really glad i got to know you, keiii
+              </p>
+            </div>
             <motion.button
               onClick={() => setPage(1)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-4 sm:mt-0 bg-pink-500 text-white px-6 py-3 rounded-full"
+              className="mt-0 bg-pink-500 text-white px-4 py-2 rounded-full text-xs sm:text-sm whitespace-nowrap"
             >
               Back to Home 🏠
             </motion.button>

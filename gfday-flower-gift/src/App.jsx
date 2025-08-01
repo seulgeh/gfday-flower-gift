@@ -95,7 +95,7 @@ export default function App() {
             <motion.p whileHover={{ scale: 1.02 }} variants={textVariants}>
               im not saying this to rush things or make it weird, but just being real with you.
               i really enjoy every convo, every random moment, and just getting to know you more. 
-              Kayak tiap kali ngobrol sama kamu, even the simplest convos bisa bikin mood aku naik. 
+              kayak tiap kali ngobrol sama kamu, even the simplest convos bisa bikin mood aku naik. 
               kamu tuh punya vibe yang calm but interesting, warm but still mysterious in a way. 
               gimana ya… susah dijelasin tapi gampang dirasain.<br /><br />
             </motion.p>
@@ -105,7 +105,7 @@ export default function App() {
               u’ve got this energy that’s lowkey hard to ignore. sooo, this message isn’t me trying to pressure anything. 
               just wanted to let you know, u’re genuinely someone i admire and enjoy having around. 
               maybe not ‘my girl’ yet, but definitely someone who’s been making my days a little brighter lately.
-              Kalau kamu senyum pas baca ini, that’s already more than enough for me😁
+              kalau kamu senyum pas baca ini, that’s already more than enough for me😁
               once again, happy GF day to uuu pwettyyy💗
             </motion.p>
           </motion.div>

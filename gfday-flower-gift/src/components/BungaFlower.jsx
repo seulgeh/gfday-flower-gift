@@ -6,7 +6,7 @@ const BungaFlower = ({ setPage }) => {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    // Menampilkan tombol setelah 10 detik
+    // Menampilkan tombol setelah 10 detik agar bunga punya waktu mekar
     const timer = setTimeout(() => {
       setShowButton(true);
     }, 10000);
@@ -300,16 +300,15 @@ const BungaFlower = ({ setPage }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-sm">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         {showButton && (
           <motion.button
             onClick={() => setPage(1)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-pink-500 text-white p-3 rounded-full shadow-lg"
+            className="bg-pink-500 text-white min-w-[150px] px-6 py-3 rounded-full text-sm shadow-lg"
           >
-            {/* Mengganti teks dengan ikon Home */}
-            <Home className="h-6 w-6" />
+            Back to Home 🏠
           </motion.button>
         )}
       </div>

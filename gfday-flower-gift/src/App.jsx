@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Flower } from 'lucide-react';
-import BungaFlower from './BungaFlower';
+import BungaFlower from './components/BungaFlower';
 
 export default function App() {
   const [page, setPage] = useState(1);

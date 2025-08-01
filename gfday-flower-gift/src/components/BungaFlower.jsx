@@ -3,26 +3,12 @@ import "./BungaFlower.css";
 import { motion } from 'framer-motion';
 
 const BungaFlower = ({ setPage }) => {
-  const [sweetMessage, setSweetMessage] = useState(null);
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    // KOREKSI: Mengubah waktu menjadi 10 detik agar bunga punya waktu mekar
     const timer = setTimeout(() => {
-      setSweetMessage(
-        <>
-          <div className="flex flex-col sm:flex-row items-end sm:items-center justify-end space-y-2 sm:space-y-0 sm:space-x-4">
-            <div className="text-right">
-              <p className="text-sm sm:text-base text-pink-500 font-bold animate-pulse">
-                as always, i’ll never get tired of saying this, u’re genuinely sooo cute and pretty.
-              </p>
-              <p className="text-xs sm:text-sm text-gray-700">
-                really glad i got to know you, keiii
-              </p>
-            </div>
-          </div>
-        </>
-      );
-    }, 10000);
+      setShowButton(true);
+    }, 10000); // Menampilkan tombol setelah 10 detik
     return () => clearTimeout(timer);
   }, []);
 
@@ -313,21 +299,19 @@ const BungaFlower = ({ setPage }) => {
         </div>
       </div>
 
-      {/* Perubahan utama ada di sini */}
       <div className="absolute bottom-4 right-4 p-4 max-w-full sm:max-w-xs">
-        {sweetMessage && (
+        {showButton && (
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white/30 backdrop-blur-md p-3 rounded-xl shadow-lg flex flex-col items-end text-right"
+            className="bg-white/30 backdrop-blur-md p-3 rounded-xl shadow-lg"
           >
-            {sweetMessage}
             <motion.button
               onClick={() => setPage(1)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-4 bg-pink-500 text-white px-6 py-3 rounded-full"
+              className="mt-4 sm:mt-0 bg-pink-500 text-white px-6 py-3 rounded-full"
             >
               Back to Home 🏠
             </motion.button>

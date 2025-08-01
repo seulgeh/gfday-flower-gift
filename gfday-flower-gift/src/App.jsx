@@ -1,10 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Flower } from 'lucide-react';
 
 export default function App() {
   const [page, setPage] = useState(1);
-  const audioRef = useRef(null);
 
   useEffect(() => {
     if (page === 2) {
@@ -13,19 +12,8 @@ export default function App() {
     }
   }, [page]);
 
-  useEffect(() => {
-    if (page === 3 && audioRef.current) {
-      audioRef.current.currentTime = 184; // mulai dari menit 03:04
-      audioRef.current.play().catch((e) => {
-        console.error("Playback failed:", e);
-      });
-    }
-  }, [page]);
-
   return (
     <div className="min-h-screen bg-[#efebe9] flex flex-col items-center justify-center p-6 text-center font-serif">
-      <audio ref={audioRef} src="/The 1975 - About You.mp3" preload="auto" />
-
       {page === 1 && (
         <motion.div
           initial={{ scale: 0 }}
@@ -45,7 +33,7 @@ export default function App() {
             onClick={() => setPage(2)}
             className="mt-6 bg-[#8d6e63] text-white px-6 py-3 rounded-full shadow hover:bg-[#6d4c41] transition"
           >
-            Tap to open your message, pretty 🌹
+            Tap to open your message 🌹
           </button>
         </motion.div>
       )}
@@ -63,16 +51,18 @@ export default function App() {
             I’m not saying this to rush things or make it weird, but just being real with you: I really enjoy every convo, every random moment, and just getting to know you more. <br /><br />
             You’ve got this energy that’s lowkey hard to ignore. So yeah, not saying you’re my girl (yet 👀), but if I had to pick someone to celebrate today with, it’d probably be you.
           </p>
+
+          {/* Bouquet GIF responsif mobile */}
           <motion.div
-            className="mt-8 flex justify-center"
-            initial={{ opacity: 0, scale: 0.5 }}
+            className="mt-8 w-full flex justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 10 }}
           >
             <img
               src="https://media.tenor.com/JqXYk5QYFzYAAAAi/flowers-bouquet.gif"
               alt="Bouquet animation"
-              className="w-48 h-auto"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-xl shadow"
             />
           </motion.div>
         </motion.div>
@@ -88,7 +78,8 @@ export default function App() {
           <h2 className="text-2xl font-bold text-[#4e342e] mb-4">💖 You’re special to me 💖</h2>
           <p className="text-[#3e2723] text-lg mb-6">
             Thank you for reading my message.<br />
-            I hope this little gesture made your day a little brighter 🌞
+            I hope this little gesture made your day a little brighter 🌞<br />
+            I’ll be waiting for your answer... 💌
           </p>
           <motion.div
             className="text-5xl mb-6"
@@ -104,6 +95,11 @@ export default function App() {
             Back to Start ↩️
           </button>
         </motion.div>
+      )}
+    </div>
+  );
+}
+
       )}
     </div>
   );

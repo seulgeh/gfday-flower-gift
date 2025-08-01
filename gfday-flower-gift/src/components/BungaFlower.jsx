@@ -1,7 +1,7 @@
 import React from "react";
 import "./BungaFlower.css";
 
-const BungaFlower = () => {
+function BungaFlower = () => {
   return (
     <div className="container">
       <div className="night"></div>

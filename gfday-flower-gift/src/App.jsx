@@ -14,8 +14,7 @@ export default function App() {
     if (page === 3) {
       const redirectTimer = setTimeout(() => {
         window.location.href = '/bunga-flower/';
-      }, 5000); // ⏱️ 5 detik sebelum redirect
-
+      }, 5000); // Redirect ke /bunga-flower setelah 5 detik
       return () => clearTimeout(redirectTimer);
     }
   }, [page]);
@@ -63,75 +62,12 @@ export default function App() {
       )}
 
       {page === 3 && (
-        <div className="relative w-full h-screen bg-black flex items-center justify-center overflow-hidden">
-          {[...Array(25)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full bg-pink-300 opacity-70"
-              style={{
-                width: `${Math.random() * 6 + 4}px`,
-                height: `${Math.random() * 6 + 4}px`,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                filter: "blur(1px)"
-              }}
-              animate={{
-                y: [0, -20],
-                opacity: [0.7, 0.3, 0.7]
-              }}
-              transition={{
-                duration: Math.random() * 3 + 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: Math.random() * 2
-              }}
-            />
-          ))}
-
-          {/* Bouquet */}
-          <motion.div
-            className="relative w-64 h-96 z-10"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 1.5 }}
-          >
-            <motion.div
-              className="absolute bottom-0 left-1/2 w-2 h-64 bg-green-700 -translate-x-1/2 rounded-full"
-              initial={{ height: 0 }}
-              animate={{ height: "16rem" }}
-              transition={{ duration: 1.5, delay: 0.5 }}
-            />
-
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute top-1/2 left-1/2 w-16 h-16 bg-pink-400 rounded-full"
-                style={{
-                  transform: `rotate(${i * 60}deg)`
-                }}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{
-                  scale: 1,
-                  opacity: 1,
-                  x: 60 * Math.cos((i * 60 * Math.PI) / 180),
-                  y: 60 * Math.sin((i * 60 * Math.PI) / 180)
-                }}
-                transition={{
-                  delay: 0.5 + i * 0.2,
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 10
-                }}
-              />
-            ))}
-
-            <motion.div
-              className="absolute top-1/2 left-1/2 w-12 h-12 bg-yellow-400 rounded-full -translate-x-1/2 -translate-y-1/2"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 1.8, type: "spring", stiffness: 120 }}
-            />
-          </motion.div>
+        <div className="w-full h-screen overflow-hidden bg-black">
+          <iframe
+            src="/bunga-flower/index.html"
+            title="Bunga Flower"
+            className="w-full h-full border-none"
+          />
         </div>
       )}
     </div>

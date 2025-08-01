@@ -8,7 +8,8 @@ export default function App() {
 
   useEffect(() => {
     if (page === 2) {
-      const timer = setTimeout(() => setPage(3), 6000); // pindah otomatis ke page 3
+      // KOREKSI: Mengubah durasi menjadi 15000ms (15 detik)
+      const timer = setTimeout(() => setPage(3), 15000); 
       return () => clearTimeout(timer);
     }
   }, [page]);
@@ -77,7 +78,7 @@ export default function App() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="bg-[#d7ccc8] p-8 rounded-2xl shadow-xl w-full max-w-2xl text-center"
+          className="bg-[#d7ccc8] p-4 sm:p-8 rounded-2xl shadow-xl w-full max-w-xl text-center"
         >
           <motion.h2
             whileHover={{ scale: 1.05, color: '#f06292' }}
@@ -90,7 +91,7 @@ export default function App() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-[#3e2723] text-lg leading-relaxed"
+            className="text-[#3e2723] text-base sm:text-lg leading-relaxed"
           >
             <motion.p whileHover={{ scale: 1.02 }} variants={textVariants}>
               honestly, i don’t even know if im allowed to say this, like.. kita belum jadian and i get it. 

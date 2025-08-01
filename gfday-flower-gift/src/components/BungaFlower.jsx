@@ -1,7 +1,7 @@
 import React from "react";
 import "./BungaFlower.css";
 
-function BungaFlower = () => {
+const BungaFlower = () => {
   return (
     <div className="container">
       <div className="night"></div>
@@ -302,8 +302,6 @@ function BungaFlower = () => {
         </div>
       </div>
     </div>
-    
-    <script src="BungaFlower.js"></script>
   </div>
   );
 }

@@ -6,7 +6,6 @@ const BungaFlower = ({ setPage }) => {
   const [sweetMessage, setSweetMessage] = useState("");
 
   useEffect(() => {
-    // KOREKSI: Mengubah waktu menjadi 10 detik agar bunga punya waktu mekar
     const timer = setTimeout(() => {
       setSweetMessage(
         <>
@@ -312,28 +311,29 @@ const BungaFlower = ({ setPage }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        {sweetMessage && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center bg-white/30 backdrop-blur-md p-4 rounded-xl shadow-lg"
-          >
-            {sweetMessage}
-            <motion.button
-              onClick={() => setPage(1)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-4 bg-pink-500 text-white px-6 py-3 rounded-full"
-            >
-              Back to Home 🏠
-            </motion.button>
-          </motion.div>
-        )}
-      </div>
-    </div>
-  );
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+        {sweetMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center bg-white/30 backdrop-blur-md p-4 rounded-xl shadow-lg"
+          >
+            {sweetMessage}
+            <motion.button
+              onClick={() => setPage(1)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mt-4 bg-pink-500 text-white px-6 py-3 rounded-full"
+            >
+              Back to Home 🏠
+            </motion.button>
+          </motion.div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default BungaFlower;
+berikan code nya

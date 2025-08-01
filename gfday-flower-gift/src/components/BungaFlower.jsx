@@ -300,9 +300,10 @@ const BungaFlower = () => {
         <div className="grow-ans" style={{ "--d": "3.6s" }}>
           <div className="leaf leaf--3"></div>
         </div>
-      </div>
-    </div>
-  </div>
+      </div> 
+      
+    </div> {/* .flowers */}
+  </div> {/* .container */}
   );
 }
 
